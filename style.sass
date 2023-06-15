@@ -1,0 +1,89 @@
+*
+  box-sizing: border-box
+  font-family: helvetica
+body
+  background-color: black
+  color: white
+
+  
+#app
+  display: grid
+  justify-content: center
+  align-content: center
+  width: 80vw
+  margin: auto
+  background-color: black
+  
+h1
+  text-align: center
+#calculator
+  padding: 10px
+  background-color: black
+  display: grid
+  grid-gap: 10px
+  grid-template-rows: 100px auto
+  grid-template-areas: "display" "button"
+ 
+#display
+  grid-area: display
+  display: grid
+  justify-content: flex-end
+  align-content: flex-end
+  background-color: black
+  padding: 0 30px
+  font-size: 5em
+  
+#calc-layout
+  grid-area: button
+  padding: 10px
+  display: grid 
+  justify-content: center
+  grid-template-areas: 'Tools Operators' 'NumPad Operators'
+  grid-template-columns: 250px 85px
+  grid-template-rows: auto 1fr
+.calc-section
+  display: grid
+  grid-gap: 10px
+  justify-content: center
+  align-content: flex-start
+  grid-template-rows: repeat(auto-fit, 75px)
+  grid-template-columns: repeat(auto-fit, 75px)
+#tools
+  grid-area: Tools
+#tools > .calc-button
+  background-color: hsl(180, 0%, 50%)
+  color: black
+  &:hover, &:active
+    background-color: hsl(180, 0%, 80%)
+#operators
+  grid-area: Operators
+  padding: 0 10px
+#operators > .calc-button
+  background-color: hsl(40, 100%, 50%)
+  &:hover, &:active
+    background-color: hsl(40, 100%, 70%)
+#numPad
+  grid-area: NumPad
+  padding: 10px 0
+  grid-template-areas: 'seven eight nine' 'four five six' 'one two three' 'zero zero decimal'
+  
+#numPad > .calc-button
+  background-color: hsl(180, 0%, 20%)
+  &:hover, &:active
+    background-color: hsl(180, 0%, 60%)  
+  
+.calc-button
+  min-width: 75px 
+  height: 75px
+  border-radius: 50px
+  background-color: white
+  display: grid
+  justify-content: center
+  align-content: center
+  font-size: 2em
+  transition: all 2s
+  &:hover
+    transition: all 1s
+    cursor: pointer
+  
+  
